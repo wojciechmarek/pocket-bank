@@ -18,7 +18,7 @@ export const Hero = (props: Props) => {
           </span>
         </h1>
         <p className="mt-6 text-center lg:text-left">
-          The only banking app you'll ever need, with a simple and intuitive UI and a wide range of features.
+          The only banking app you&apos;ll ever need, with a simple and intuitive UI and a wide range of features.
         </p>
         <div className="flex gap-4 mt-12 lg:mt-6 justify-center lg:justify-start items-center">
           <Link
