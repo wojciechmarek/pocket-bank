@@ -1,5 +1,6 @@
 "use client";
 
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -7,7 +8,7 @@ type Props = {};
 
 export const Navigation = (props: Props) => {
   return (
-    <nav className="flex items-center justify-between px-2 py-8 max-w-5xl mx-auto">
+    <nav className="flex items-center justify-between py-8 max-w-5xl mx-auto lg:mx-auto px-8 md:px-4">
       <div className="flex items-center gap-4">
         {/* <Image src="/logo.svg" width={40} height={40} /> */}
         <h1 className="text-2xl font-bold">
@@ -19,7 +20,7 @@ export const Navigation = (props: Props) => {
           </Link>
         </h1>
       </div>
-      <ul className="flex gap-8">
+      <ul className="gap-8 hidden md:flex">
         <li>
           <Link href="/features">Features</Link>
         </li>
@@ -44,6 +45,9 @@ export const Navigation = (props: Props) => {
           </Link>
         </li>
       </ul>
+      <button className="md:hidden p-1">
+        <Menu />
+      </button>
     </nav>
   );
 };
