@@ -1,3 +1,5 @@
+import { Minus, Plus } from "lucide-react";
+
 type Props = {
   title: string;
   description: string;
@@ -16,7 +18,7 @@ export const AboutItem = (props: Props) => {
           className="font-bold px-6 py-3 text-2xl"
           onClick={onExpandClick}
         >
-          {isExpanded ? "-" : "+"}
+          {isExpanded ? <Minus /> : <Plus />}
         </button>
       </div>
       <p
