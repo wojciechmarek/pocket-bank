@@ -22,7 +22,7 @@ export const Hero = (props: Props) => {
         </p>
         <div className="flex gap-4 mt-12 lg:mt-6 justify-center lg:justify-start items-center">
           <Link
-            className="px-6 py-3 font-bold rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7]"
+            className="px-6 py-3 font-bold rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] hover:from-[#c7577d] hover:to-[#6a60ed] hover:scale-105 transform transition-all duration-300"
             href="/login"
           >
             Get Started
@@ -35,14 +35,8 @@ export const Hero = (props: Props) => {
           </Link>
         </div>
       </div>
-      <div className="h-96 hidden lg:block w-full lg:w-1/2">
-        <Image
-          src="/cards.png"
-          className="h-full w-full rounded-lg"
-          alt=""
-          width={600}
-          height={600}
-        />
+      <div className="h-96 hidden lg:block w-full lg:w-1/2 relative">
+        <Image src="/cards.png" alt="" fill={true} style={{objectFit: "cover"}} className="rounded-lg"/>
       </div>
     </div>
   );

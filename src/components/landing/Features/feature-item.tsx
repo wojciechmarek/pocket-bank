@@ -25,8 +25,8 @@ export const FeatureItem = (props: Props) => {
         </h3>
         <p className="text-center lg:text-left">{description}</p>
       </div>
-      <div className="h-96 lg:w-3/5 bg-[#0f0f0f] rounded-lg">
-        <Image src={image} alt="" height={510} width={510} className="mx-auto "/>
+      <div className="h-96 w-full lg:w-3/5 bg-[#0f0f0f] relative">
+        <Image src={image} alt="" fill style={{objectFit: "cover"}} className="w-full rounded-lg"/>
       </div>
     </div>
   );

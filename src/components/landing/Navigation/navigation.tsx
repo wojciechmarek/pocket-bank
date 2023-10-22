@@ -2,7 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {};
 
@@ -12,6 +12,17 @@ export const Navigation = (props: Props) => {
   const handleMobileMenuClick = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  useEffect(() => {
+    const updateScreen = () => {
+      if (window.innerWidth > 768) {
+        setIsMobileMenuOpen(false);
+      }
+    }
+    updateScreen();
+    window.addEventListener("resize", updateScreen);
+    return () => window.removeEventListener("resize", updateScreen);
+  }, []);
 
   return (
     <nav>
@@ -27,7 +38,7 @@ export const Navigation = (props: Props) => {
             </Link>
           </h1>
         </div>
-        <ul className="gap-8 hidden md:flex">
+        <ul className="md:gap-6 lg:gap-8 hidden md:flex">
           <li>
             <Link href="/features">Features</Link>
           </li>
