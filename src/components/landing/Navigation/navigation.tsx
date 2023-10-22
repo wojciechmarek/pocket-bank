@@ -38,7 +38,7 @@ export const Navigation = (props: Props) => {
         </li>
         <li>
           <Link
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7]"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] font-bold"
             href="/login"
           >
             Get Started

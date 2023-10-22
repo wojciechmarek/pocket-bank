@@ -13,7 +13,7 @@ export const Hero = (props: Props) => {
             Pocket Bank -
           </span>
           <br />
-          <span className="bg-gradient-to-r from-[#564ED7] to-[#91A8CD] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#4E3EF5] to-[#B3F9D1] bg-clip-text text-transparent">
             All You Need In Your Pocket.
           </span>
         </h1>
