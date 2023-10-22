@@ -14,7 +14,7 @@ export default function Login(props: Props) {
       <div className="flex flex-col gap-4 mt-4">
         <h2 className="text-2xl font-bold">Login to your favorite bank:</h2>
         <div className="flex gap-12 h-72">
-          <div className="flex flex-col gap-2 w-1/2">
+          <div className="flex flex-col gap-2 w-96">
             <p>Enter your credentials</p>
             <form className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
@@ -39,7 +39,7 @@ export default function Login(props: Props) {
             </form>
           </div>
           <div className="bg-[#1d1d1d] w-0.5 h-full"></div>
-          <div className="flex flex-col gap-2 w-1/2">
+          <div className="flex flex-col gap-2 w-72">
             <p>If you have a mobile app installed, scan a QR code:</p>
             <div className="flex-row grid h-full place-items-center">
               <QRCodeSVG value="https://pocketbank.com/login" className="p-2 bg-white"/>
