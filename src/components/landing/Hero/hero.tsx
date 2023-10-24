@@ -10,7 +10,7 @@ export const Hero = (props: Props) => {
     <div className="flex gap-3 w-full mt-36 items-center">
       <div className="flex flex-col w-full lg:w-1/2 md:pr-5">
         <h1 className="text-6xl font-bold text-center lg:text-left">
-          <span className=" bg-gradient-to-r from-[#B24A6D] to-[#7E78A6] bg-clip-text text-transparent">
+          <span className=" bg-gradient-to-r from-[#9e2f6c] to-[#B24A6D] bg-clip-text text-transparent">
             Pocket Bank -
           </span>
           <br />
@@ -26,7 +26,7 @@ export const Hero = (props: Props) => {
             whileHover={{ scale: 1.1 }}
           >
             <Link
-              className="px-7 py-4 font-bold rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7]"
+              className="px-7 py-4 font-bold rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7]"
               href="/login"
             >
               Get Started
