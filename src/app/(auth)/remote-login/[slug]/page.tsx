@@ -15,11 +15,11 @@ export default function RemoteLogin(props: Props) {
   const handleOnLoginButtonClick = () => {
     setIsLoggingIn(true);
 
-    fetch(`http://localhost:3000/api/remote-login`, {
+    fetch(`https://pocket-bank.vercel.app/api/remote-login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Origin": "http://localhost:3000",
+        "Origin": "https://pocket-bank.vercel.app",
       },
       body: JSON.stringify({
         id: params?.slug,

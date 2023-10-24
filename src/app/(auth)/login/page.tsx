@@ -23,11 +23,11 @@ export default function Login(props: Props) {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      fetch(`http://localhost:3000/api/authorized-ids`, {
+      fetch(`https://pocket-bank.vercel.app/api/authorized-ids`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Origin": "http://localhost:3000",
+          "Origin": "https://pocket-bank.vercel.app",
         },
         body: JSON.stringify({
           id: uuid,
