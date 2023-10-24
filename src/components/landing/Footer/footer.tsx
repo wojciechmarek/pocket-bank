@@ -12,7 +12,7 @@ export const Footer = (props: Props) => {
           {/* <Image src="/logo.svg" width={40} height={40} /> */}
           <h1 className="text-2xl font-bold">
             <Link
-              className="bg-gradient-to-r from-[#B24A6D] to-[#7E78A6] bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-[#9e2f6c] to-[#B24A6D] bg-clip-text text-transparent"
               href="/"
             >
               Pocket Bank

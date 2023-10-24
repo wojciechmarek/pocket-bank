@@ -32,7 +32,7 @@ export const Navigation = (props: Props) => {
           {/* <Image src="/logo.svg" width={40} height={40} /> */}
           <h1 className="text-2xl font-bold">
             <Link
-              className="bg-gradient-to-r from-[#B24A6D] to-[#7E78A6] bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-[#9e2f6c] to-[#B24A6D] bg-clip-text text-transparent"
               href="/"
             >
               Pocket Bank
@@ -60,7 +60,7 @@ export const Navigation = (props: Props) => {
               whileHover={{ scale: 1.1 }}
             >
               <Link
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] font-bold"
+                className="px-6 py-3 rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7] font-bold"
                 href="/login"
               >
                 Get Started
@@ -74,7 +74,7 @@ export const Navigation = (props: Props) => {
       </div>
       {isMobileMenuOpen && (
         <div className="absolute h-fit py-6 w-screen bg-[#0f0f0f]">
-          <ul className="gap-4 flex flex-col items-center text-xl">
+          <ul className="gap-4 flex flex-col items-center text-lg">
             <li>
               <Link href="/features">Features</Link>
             </li>
@@ -92,7 +92,7 @@ export const Navigation = (props: Props) => {
             </li>
             <li className="my-2">
               <Link
-                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] font-bold"
+                className="px-6 py-3 rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7] font-bold"
                 href="/login"
               >
                 Get Started

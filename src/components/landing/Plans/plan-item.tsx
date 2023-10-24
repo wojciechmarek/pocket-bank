@@ -35,7 +35,7 @@ export const PlanItem = (props: Props) => {
         className="mt-8 lg:mt-0 mb-12 mx-auto"
       >
         <Link
-          className="px-12 py-3 font-bold rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] "
+          className="px-12 py-4 font-bold rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7]"
           href="/login"
         >
           {linkText}
