@@ -8,10 +8,5 @@ type RequestData = {
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.body as RequestData;
   const isAuthorized = loggedIds.includes(id);
-
-  if (isAuthorized) {
-    removedLoggedIds.push(id);
-  }
-
   res.status(200).json({ isAuthorized });
 }

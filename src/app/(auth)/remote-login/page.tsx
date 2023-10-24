@@ -7,7 +7,7 @@ type Props = {};
 
 export default function RemoteLogin(props: Props) {
   const searchParams = useSearchParams();
-  const id = searchParams?.get('search')
+  const id = searchParams?.get('id')
 
   const [isFingerprintAvailable, setIsFingerprintAvailable] = React.useState(false);
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
