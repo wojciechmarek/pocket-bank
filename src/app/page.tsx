@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main className="flex min-h-screen flex-col items-center justify-between max-w-5xl lg:mx-auto px-8 md:px-4">
+      <main className="flex min-h-screen flex-col items-center justify-between max-w-5xl lg:mx-auto px-8 md:px-4 mb-8">
         <Hero />
         <Features />
         <Plans />
