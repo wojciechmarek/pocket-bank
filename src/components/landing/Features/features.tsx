@@ -19,10 +19,6 @@ export const Features = (props: Props) => {
 
       {/* FEATURE 1 */}
       <motion.div
-        animate={{ x: 0, opacity: 1 }}
-        initial="offscreen"
-        whileInView="onscreen"
-        transition={{ ease: "easeOut", duration: 0.7, delay: 0.2 }}
 
       >
         <FeatureItem
@@ -36,9 +32,6 @@ export const Features = (props: Props) => {
 
       {/* FEATURE 2 */}
       <motion.div
-        initial={{ x: 100 }}
-        animate={{ x: 0 }}
-        transition={{ ease: "easeOut", duration: 0.7 }}
       >
         <FeatureItem
           title1="Unlimited Cards"
@@ -51,9 +44,6 @@ export const Features = (props: Props) => {
 
       {/* FEATURE 3 */}
       <motion.div
-        initial={{ x: -100 }}
-        animate={{ x: 0 }}
-        transition={{ ease: "easeOut", duration: 0.7 }}
       >
         <FeatureItem
           title1="IRS Tax Calculator"
