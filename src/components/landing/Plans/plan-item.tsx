@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
@@ -29,12 +30,17 @@ export const PlanItem = (props: Props) => {
           ))}
         </ul>
       </div>
-      <Link
-        className="mt-8 lg:mt-0 px-12 py-3 font-bold rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] mb-8 mx-auto"
-        href="/login"
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        className="mt-8 lg:mt-0 mb-12 mx-auto"
       >
-        {linkText}
-      </Link>
+        <Link
+          className="px-12 py-3 font-bold rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] "
+          href="/login"
+        >
+          {linkText}
+        </Link>
+      </motion.div>
     </div>
   );
 };

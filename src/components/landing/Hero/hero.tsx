@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -21,12 +22,17 @@ export const Hero = (props: Props) => {
           The only banking app you will ever need, with a simple and intuitive UI and a wide range of features.
         </p>
         <div className="flex gap-4 mt-12 lg:mt-6 justify-center lg:justify-start items-center">
-          <Link
-            className="px-6 py-3 font-bold rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] hover:from-[#c7577d] hover:to-[#6a60ed] hover:scale-105 transform transition-all duration-300"
-            href="/login"
+          <motion.div
+            whileHover={{ scale: 1.1 }}
           >
-            Get Started
-          </Link>
+            <Link
+              className="px-7 py-4 font-bold rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7]"
+              href="/login"
+            >
+              Get Started
+            </Link>
+          </motion.div>
+
           <Link
             className="px-6 py-3 font-bold rounded-full border-solid border-[#91A8CD] border-2"
             href="/demo"
@@ -36,7 +42,7 @@ export const Hero = (props: Props) => {
         </div>
       </div>
       <div className="h-96 hidden lg:block w-full lg:w-1/2 relative">
-        <Image src="/cards.png" alt="" fill={true} style={{objectFit: "cover"}} className="rounded-lg"/>
+        <Image src="/cards.png" alt="" fill={true} style={{ objectFit: "cover" }} className="rounded-lg" />
       </div>
     </div>
   );
