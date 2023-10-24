@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -55,12 +56,16 @@ export const Navigation = (props: Props) => {
             <Link href="/about">About</Link>
           </li>
           <li>
-            <Link
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] font-bold"
-              href="/login"
+            <motion.div
+              whileHover={{ scale: 1.1 }}
             >
-              Get Started
-            </Link>
+              <Link
+                className="px-6 py-3 rounded-full bg-gradient-to-r from-[#B24A6D] to-[#564ED7] font-bold"
+                href="/login"
+              >
+                Get Started
+              </Link>
+            </motion.div>
           </li>
         </ul>
         <button className="md:hidden p-1" onClick={handleMobileMenuClick}>

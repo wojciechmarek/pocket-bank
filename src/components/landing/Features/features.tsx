@@ -1,5 +1,6 @@
 import React from "react";
 import { FeatureItem } from "./feature-item";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -17,31 +18,51 @@ export const Features = (props: Props) => {
       </h2>
 
       {/* FEATURE 1 */}
-      <FeatureItem
-        title1="Great Dashboard"
-        title2="with Light/Dark Mode."
-        description="Make your banking experience more enjoyable with our great dashboard, which supports both Light and Dark Mode."
-        image="/feature1.jpg"
-        isRevertedFlow={false}
-      />
+      <motion.div
+        animate={{ x: 0, opacity: 1 }}
+        initial="offscreen"
+        whileInView="onscreen"
+        transition={{ ease: "easeOut", duration: 0.7, delay: 0.2 }}
+
+      >
+        <FeatureItem
+          title1="Great Dashboard"
+          title2="with Light/Dark Mode."
+          description="Make your banking experience more enjoyable with our great dashboard, which supports both Light and Dark Mode."
+          image="/feature1.jpg"
+          isRevertedFlow={false}
+        />
+      </motion.div>
 
       {/* FEATURE 2 */}
-      <FeatureItem
-        title1="Unlimited Cards"
-        title2="only in the Premium Plan."
-        description="Credit cards, debit cards, virtual cards, you name it. We have it all. And you can have it too, by subscribing to our Premium Plan."
-        image="/feature2.png"
-        isRevertedFlow={true}
-      />
+      <motion.div
+        initial={{ x: 100 }}
+        animate={{ x: 0 }}
+        transition={{ ease: "easeOut", duration: 0.7 }}
+      >
+        <FeatureItem
+          title1="Unlimited Cards"
+          title2="only in the Premium Plan."
+          description="Credit cards, debit cards, virtual cards, you name it. We have it all. And you can have it too, by subscribing to our Premium Plan."
+          image="/feature2.png"
+          isRevertedFlow={true}
+        />
+      </motion.div>
 
       {/* FEATURE 3 */}
-      <FeatureItem
-        title1="IRS Tax Calculator"
-        title2="to pay less taxes."
-        description="Start saving money by paying less taxes. Our IRS Tax Calculator will help you calculate your taxes and save money."
-        image="/feature3.jpg"
-        isRevertedFlow={false}
-      />
+      <motion.div
+        initial={{ x: -100 }}
+        animate={{ x: 0 }}
+        transition={{ ease: "easeOut", duration: 0.7 }}
+      >
+        <FeatureItem
+          title1="IRS Tax Calculator"
+          title2="to pay less taxes."
+          description="Start saving money by paying less taxes. Our IRS Tax Calculator will help you calculate your taxes and save money."
+          image="/feature3.jpg"
+          isRevertedFlow={false}
+        />
+      </motion.div>
     </div>
   );
 };
