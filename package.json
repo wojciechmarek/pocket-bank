@@ -10,6 +10,7 @@
     "pocketbase": "./pocketbase/pocketbase serve"
   },
   "dependencies": {
+    "@fingerprintjs/fingerprintjs-pro-react": "^2.6.1",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.288.0",
     "next": "13.5.6",
