@@ -1,57 +1,57 @@
-'use client'
+"use client";
 
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   useReactTable,
-} from '@tanstack/react-table'
-import { MoreVertical } from 'lucide-react'
-import { Navigation } from '../common/Navigation'
-import React from 'react'
-import { TransactionsTable } from './TransactionsTable'
+} from "@tanstack/react-table";
+import { MoreVertical } from "lucide-react";
+import { Navigation } from "../common/Navigation";
+import React from "react";
+import { TransactionsTable } from "./TransactionsTable";
 
-type Props = {}
+type Props = {};
 
 const defaultData = [
   {
-    type: 'in',
-    date: '2021-01-01',
+    type: "in",
+    date: "2021-01-01",
     amount: 20,
-    description: 'test',
-    status: 'Processing',
+    description: "test",
+    status: "Processing",
     amountAfter: 80,
   },
   {
-    type: 'in',
-    date: '2021-01-02',
+    type: "in",
+    date: "2021-01-02",
     amount: 20,
-    description: 'test',
-    status: 'Finished',
+    description: "test",
+    status: "Finished",
     amountAfter: 60,
   },
-]
+];
 
 export const History = (props: Props) => {
-  const [data, setData] = React.useState(() => [...defaultData])
+  const [data, setData] = React.useState(() => [...defaultData]);
 
   const handleAddNewRowButtonClick = () => {
     setData([
       ...data,
       {
-        type: Math.random() > 0.5 ? 'in' : 'out',
+        type: Math.random() > 0.5 ? "in" : "out",
         date: new Date().toLocaleTimeString(),
         amount: Math.round(Math.random() * 100),
-        description: 'test',
-        status: Math.random() > 0.5 ? 'Processing' : 'Finished',
+        description: "test",
+        status: Math.random() > 0.5 ? "Processing" : "Finished",
         amountAfter: Math.round(Math.random() * 100),
       },
-    ])
-  }
+    ]);
+  };
 
   const handleTransactionDetailsButtonClick = (id: string) => {
-    alert(id)
-  }
+    alert(id);
+  };
 
   return (
     <>
@@ -76,5 +76,5 @@ export const History = (props: Props) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};

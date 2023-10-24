@@ -1,29 +1,29 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
-type Props = {}
+type Props = {};
 
 export const Navigation = (props: Props) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMobileMenuClick = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   useEffect(() => {
     const updateScreen = () => {
       if (window.innerWidth > 768) {
-        setIsMobileMenuOpen(false)
+        setIsMobileMenuOpen(false);
       }
-    }
-    updateScreen()
-    window.addEventListener('resize', updateScreen)
-    return () => window.removeEventListener('resize', updateScreen)
-  }, [])
+    };
+    updateScreen();
+    window.addEventListener("resize", updateScreen);
+    return () => window.removeEventListener("resize", updateScreen);
+  }, []);
 
   return (
     <nav>
@@ -100,5 +100,5 @@ export const Navigation = (props: Props) => {
         </div>
       )}
     </nav>
-  )
-}
+  );
+};

@@ -1,42 +1,42 @@
-'use client'
+"use client";
 
-import { Menu, X } from 'lucide-react'
-import React, { useCallback, useEffect, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { pb } from '@/pocketbase/pocketbase'
-import { useRouter } from 'next/navigation'
+import { Menu, X } from "lucide-react";
+import React, { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { pb } from "@/pocketbase/pocketbase";
+import { useRouter } from "next/navigation";
 
-type Props = {}
+type Props = {};
 
 type User = {
-  avatar: string
-  collectionId: string
-  collectionName: string
-  created: string
-  email: string
-  emailVisibility: boolean
-  id: string
-  name: string
-  updated: string
-  username: string
-  verified: boolean
-}
+  avatar: string;
+  collectionId: string;
+  collectionName: string;
+  created: string;
+  email: string;
+  emailVisibility: boolean;
+  id: string;
+  name: string;
+  updated: string;
+  username: string;
+  verified: boolean;
+};
 
 export const Navigation = (props: Props) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [user, setUser] = useState<User>()
-  const router = useRouter()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [user, setUser] = useState<User>();
+  const router = useRouter();
 
   const handleMobileMenuClick = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const handleLogOutButtonClick = () => {
-    pb.authStore.clear()
-    router.push('/')
-  }
+    pb.authStore.clear();
+    router.push("/");
+  };
 
   // useEffect(() => {
   //   const updateScreen = () => {
@@ -49,23 +49,23 @@ export const Navigation = (props: Props) => {
   //   return () => window.removeEventListener("resize", updateScreen);
   // }, []);
 
-  let asd = 'asdasd'
-
   const getUserData = useCallback(async (id: number | string) => {
     try {
-      const result = await pb.collection('users').getFirstListItem(`id="${id}"`)
-      setUser(result as User)
+      const result = await pb
+        .collection("users")
+        .getFirstListItem(`id="${id}"`);
+      setUser(result as User);
     } catch (error) {
-      console.error(asd)
+      console.error(asd);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    const userId = pb.authStore.model?.id
+    const userId = pb.authStore.model?.id;
     if (userId) {
-      getUserData(userId)
+      getUserData(userId);
     }
-  }, [getUserData])
+  }, [getUserData]);
 
   return (
     <nav>
@@ -148,5 +148,5 @@ export const Navigation = (props: Props) => {
         </div>
       )}
     </nav>
-  )
-}
+  );
+};

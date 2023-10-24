@@ -1,14 +1,14 @@
-import { PlanItem } from './plan-item'
-import React from 'react'
+import { PlanItem } from "./plan-item";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const plans = [
-  'Unlimited Cards',
-  'Unlimited Transactions',
-  'Unlimited ATM Withdrawals',
-  'Unlimited Virtual Cards',
-]
+  "Unlimited Cards",
+  "Unlimited Transactions",
+  "Unlimited ATM Withdrawals",
+  "Unlimited Virtual Cards",
+];
 
 export const Plans = (props: Props) => {
   return (
@@ -47,5 +47,5 @@ export const Plans = (props: Props) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,17 +1,17 @@
-'use client'
+"use client";
 
-import React from 'react'
-import PocketBase from 'pocketbase'
-import { History, Navigation } from '@/components/app'
-import { useRouter } from 'next/navigation'
-import { pb } from '@/pocketbase/pocketbase'
+import React from "react";
+import PocketBase from "pocketbase";
+import { History, Navigation } from "@/components/app";
+import { useRouter } from "next/navigation";
+import { pb } from "@/pocketbase/pocketbase";
 
-type Props = {}
+type Props = {};
 
 export default function HistoryPage(props: Props) {
-  const router = useRouter()
+  const router = useRouter();
   if (!pb.authStore.isValid) {
-    router.push('/login')
+    router.push("/login");
   }
 
   return (
@@ -21,5 +21,5 @@ export default function HistoryPage(props: Props) {
         <History />
       </main>
     </>
-  )
+  );
 }

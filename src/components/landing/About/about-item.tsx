@@ -1,14 +1,14 @@
-import { Minus, Plus } from 'lucide-react'
+import { Minus, Plus } from "lucide-react";
 
 type Props = {
-  title: string
-  description: string
-  isExpanded: boolean
-  onExpandClick: () => void
-}
+  title: string;
+  description: string;
+  isExpanded: boolean;
+  onExpandClick: () => void;
+};
 
 export const AboutItem = (props: Props) => {
-  const { title, description, isExpanded, onExpandClick } = props
+  const { title, description, isExpanded, onExpandClick } = props;
 
   return (
     <div className="w-full py-4 flex flex-col bg-[#0f0f0f] pl-6 rounded-lg">
@@ -22,10 +22,10 @@ export const AboutItem = (props: Props) => {
         </button>
       </div>
       <p
-        className={`mr-12 ${isExpanded ? 'visible' : 'hidden'} transition-all`}
+        className={`mr-12 ${isExpanded ? "visible" : "hidden"} transition-all`}
       >
         {description}
       </p>
     </div>
-  )
-}
+  );
+};

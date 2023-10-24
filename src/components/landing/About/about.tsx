@@ -1,20 +1,20 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { AboutItem } from './about-item'
+import { useState } from "react";
+import { AboutItem } from "./about-item";
 
-type Props = {}
+type Props = {};
 
 export const About = (props: Props) => {
-  const [expandedItem, setExpandedItem] = useState(0)
+  const [expandedItem, setExpandedItem] = useState(0);
 
   const handleFaqItemExpandClick = (itemNo: number) => {
     if (expandedItem === itemNo) {
-      setExpandedItem(0)
+      setExpandedItem(0);
     } else {
-      setExpandedItem(itemNo)
+      setExpandedItem(itemNo);
     }
-  }
+  };
 
   return (
     <div className="mt-56 lg:mt-36 w-full">
@@ -54,5 +54,5 @@ export const About = (props: Props) => {
         />
       </div>
     </div>
-  )
-}
+  );
+};
