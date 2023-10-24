@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { loggedIds } from "./common";
+import { loggedIds, removedLoggedIds } from "./common";
 
 type RequestData = {
   id: string;
@@ -7,6 +7,11 @@ type RequestData = {
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.body as RequestData;
-  loggedIds.push(id);
-  res.status(200).json({ id });
+  const isAuthorized = loggedIds.includes(id);
+
+  if (isAuthorized) {
+    removedLoggedIds.push(id);
+  }
+
+  res.status(200).json({ isAuthorized });
 }

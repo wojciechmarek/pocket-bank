@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
+import { v4 as uuidv4 } from 'uuid';
+import { useRouter } from "next/navigation";
 
 type Props = {};
 
@@ -13,6 +15,39 @@ export default function Login(props: Props) {
   const handleMakePasswordVisibleClick = () => {
     setIsPasswordVisible(!isPasswordVisible);
   }
+
+  const uuid = uuidv4();
+
+  const router = useRouter();
+  
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      fetch(`http://localhost:3000/api/authorized-ids`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Origin": "http://localhost:3000",
+        },
+        body: JSON.stringify({
+          id: uuid,
+        }),
+      }).then((response) => {
+        if (response.status === 200) {
+          response.json().then((data) => {
+            if (data.isAuthorized) {
+              router.push('/dashboard');
+            }
+          });
+        }
+      }
+      );
+    }, 1000);
+
+    return () => {
+      clearInterval(intervalId);
+    }
+  }, []);
 
   return (
     <main className="px-8 md:px-4">
@@ -65,7 +100,7 @@ export default function Login(props: Props) {
             <div className="flex gap-2 w-full mt-6">
               <p className="w-1/2 font-bold">Scan a QR code to login using fingerprint:</p>
               <div className="w-1/2 flex-row grid h-full place-items-center">
-                <QRCodeSVG value="https://pocket-bank.vercel.app/remote-login/14235784-59d3-46b3-ac1d-a0eafd0369cf" className="p-2 bg-white" />
+                <QRCodeSVG value={`https://pocket-bank.vercel.app/remote-login/${uuid}`} className="p-2 bg-white" />
               </div>
             </div>
           </div>
