@@ -100,7 +100,7 @@ export default function Login(props: Props) {
             <div className="flex gap-2 w-full mt-6">
               <p className="w-1/2 font-bold">Scan a QR code to login using fingerprint:</p>
               <div className="w-1/2 flex-row grid h-full place-items-center">
-                <QRCodeSVG value={`https://pocket-bank.vercel.app/remote-login/${uuid}`} className="p-2 bg-white" />
+                <QRCodeSVG value={`https://pocket-bank.vercel.app/remote-login?id=${uuid}`} className="p-2 bg-white" />
               </div>
             </div>
           </div>

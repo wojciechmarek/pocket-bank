@@ -1,12 +1,13 @@
 "use client";
 
 import React from "react";
-import { useParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 type Props = {};
 
 export default function RemoteLogin(props: Props) {
-  const params = useParams();
+  const searchParams = useSearchParams();
+  const id = searchParams?.get('search')
 
   const [isFingerprintAvailable, setIsFingerprintAvailable] = React.useState(false);
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
@@ -22,7 +23,7 @@ export default function RemoteLogin(props: Props) {
         "Origin": "https://pocket-bank.vercel.app",
       },
       body: JSON.stringify({
-        id: params?.slug,
+        id
       }),
     }).then((response) => {
       if (response.status === 200) {
