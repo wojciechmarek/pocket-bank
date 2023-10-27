@@ -1,39 +1,32 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useSearchParams } from 'next/navigation';
+import { io } from "socket.io-client";
 
 type Props = {};
 
-export default function RemoteLogin(props: Props) {
+export default function RemoteLoginPage(props: Props) {
   const searchParams = useSearchParams();
-  const id = searchParams?.get('id')
+  const id = searchParams?.get('id');
 
   const [isFingerprintAvailable, setIsFingerprintAvailable] = React.useState(false);
   const [isLoggingIn, setIsLoggingIn] = React.useState(false);
   const [isLogged, setIsLogged] = React.useState(false);
 
-  const handleOnLoginButtonClick = () => {
-    setIsLoggingIn(true);
+  useEffect(() => socketInitializer(), [])
 
-    fetch(`https://pocket-bank.vercel.app/api/remote-login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Origin": "https://pocket-bank.vercel.app",
-      },
-      body: JSON.stringify({
-        id
-      }),
-    }).then((response) => {
-      if (response.status === 200) {
-        setIsLoggingIn(false);
-        setIsLogged(true);
-        setIsFingerprintAvailable(true);
-      }
-    }
-    );
+  const socket = useRef<any>();
+
+  const socketInitializer = () => {
+    socket.current = io('http://localhost:3000');
   }
+
+
+  const handleOnLoginButtonClick = () => {
+    socket.current.emit("update-input", "clicked");
+  }
+  
 
 
   return (

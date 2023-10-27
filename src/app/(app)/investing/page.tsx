@@ -2,16 +2,15 @@
 
 import React, { useEffect } from "react";
 import PocketBase from 'pocketbase'
-import { Dashboard } from "@/components/app";
+import { Investing } from "@/components/app";
 
 type Props = {};
 
-export default function DashboardPage(props: Props) {
-
+export default function InvestingPage(props: Props) {
 
 return (
   <main className="px-8 md:px-4">
-    <Dashboard />
+    <Investing />
   </main>
 );
 }
