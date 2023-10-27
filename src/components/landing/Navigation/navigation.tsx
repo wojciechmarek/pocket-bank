@@ -61,7 +61,7 @@ export const Navigation = (props: Props) => {
             >
               <Link
                 className="px-6 py-3 rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7] font-bold"
-                href="/login"
+                href="/dashboard"
               >
                 Get Started
               </Link>
@@ -93,7 +93,7 @@ export const Navigation = (props: Props) => {
             <li className="my-2">
               <Link
                 className="px-6 py-3 rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7] font-bold"
-                href="/login"
+                href="/dashboard"
               >
                 Get Started
               </Link>

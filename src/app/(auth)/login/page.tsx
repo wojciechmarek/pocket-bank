@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { QRCodeSVG } from "qrcode.react";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { v4 as uuidv4 } from 'uuid';
 import { useRouter } from "next/navigation";
-import io from 'socket.io-client';
+import { pb } from "@/pocketbase/pocketbase";
 
 
 type Props = {};
@@ -20,31 +20,21 @@ export default function LoginPage(props: Props) {
 
   const uuid = uuidv4();
 
-  const [input, setInput] = useState('')
-
   const router = useRouter();
 
-  const handleOnLoginButtonClick = () => {
+  const handleOnLoginButtonClick = async () => {
+    await pb.collection('users')
+      .authWithPassword('wojmar', 'Qwertyuiop1!');
+
+
+    console.log("----------");
+    
+    console.log(pb.authStore.isValid);
+    console.log(pb.authStore.token);
+    console.log(pb.authStore.model?.id);
+
     router.push('/dashboard')
   }
-  
-  useEffect(() => socketInitializer(), [])
-
-
-
-  const socketInitializer = () => {
-    const socket = io('http://localhost:3000');
-
-    socket.on('connect', () => {
-      console.log('connected');
-    });
-
-    socket.on('update-input', (msg) => {
-      console.log('......', msg);
-    });
-  }
-
-
 
 
   return (

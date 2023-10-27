@@ -1,5 +1,3 @@
-"use client";
-
 import { About, Features, Footer, Hero, Navigation, Plans } from "@/components/landing";
 
 export default function Home() {

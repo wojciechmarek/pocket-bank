@@ -52,8 +52,7 @@ export const History = (props: Props) => {
   
   return (
     <>
-      <Navigation />
-      <main className="flex min-h-screen flex-col items-center justify-between max-w-5xl lg:mx-auto mb-8">
+      <div className="flex min-h-screen flex-col items-center justify-between max-w-5xl lg:mx-auto mb-8">
         <div className="relative overflow-x-auto shadow-md w-full">
           <div className='mt-4 flex justify-end'>
             <button className='px-4 py-2 rounded-md bg-[#1d1d1d] hover:bg-[#2d2d2d]' onClick={handleAddNewRowButtonClick} >New transaction</button>
@@ -62,7 +61,7 @@ export const History = (props: Props) => {
             <TransactionsTable transactions={data} onTransactionClick={(id) => handleTransactionDetailsButtonClick(id)}/>
           </div>
         </div>
-      </main>
+      </div>
     </>
   )
 }
