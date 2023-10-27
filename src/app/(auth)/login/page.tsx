@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import Image from "next/image";
 import { Eye, EyeOff } from "lucide-react";
 import { v4 as uuidv4 } from 'uuid';
 import { useRouter } from "next/navigation";
+import io from 'socket.io-client';
+
 
 type Props = {};
 
-export default function Login(props: Props) {
+export default function LoginPage(props: Props) {
   const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
 
   const handleMakePasswordVisibleClick = () => {
@@ -18,36 +20,32 @@ export default function Login(props: Props) {
 
   const uuid = uuidv4();
 
+  const [input, setInput] = useState('')
+
   const router = useRouter();
+
+  const handleOnLoginButtonClick = () => {
+    router.push('/dashboard')
+  }
   
+  useEffect(() => socketInitializer(), [])
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      fetch(`https://pocket-bank.vercel.app/api/authorized-ids`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Origin": "https://pocket-bank.vercel.app",
-        },
-        body: JSON.stringify({
-          id: uuid,
-        }),
-      }).then((response) => {
-        if (response.status === 200) {
-          response.json().then((data) => {
-            if (data.isAuthorized) {
-              router.push('/dashboard');
-            }
-          });
-        }
-      }
-      );
-    }, 1000);
 
-    return () => {
-      clearInterval(intervalId);
-    }
-  }, []);
+
+  const socketInitializer = () => {
+    const socket = io('http://localhost:3000');
+
+    socket.on('connect', () => {
+      console.log('connected');
+    });
+
+    socket.on('update-input', (msg) => {
+      console.log('......', msg);
+    });
+  }
+
+
+
 
   return (
     <main className="px-8 md:px-4">
@@ -91,7 +89,9 @@ export default function Login(props: Props) {
                     </button>
                   </div>
                 </div>
-                <button className="rounded-lg px-4 py-2 mt-2 text-white bg-gradient-to-bl from-[#B24A6D] to-[#564ED7] hover:from-[#c7577d] hover:to-[#6a60ed]">
+                <button className="rounded-lg px-4 py-2 mt-2 text-white bg-gradient-to-bl from-[#B24A6D] to-[#564ED7] hover:from-[#c7577d] hover:to-[#6a60ed]"
+                  type="button"
+                  onClick={handleOnLoginButtonClick}>
                   Login
                 </button>
               </form>

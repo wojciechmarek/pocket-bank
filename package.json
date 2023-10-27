@@ -10,14 +10,16 @@
     "pocketbase": "./pocketbase/pocketbase serve"
   },
   "dependencies": {
-    "@fingerprintjs/fingerprintjs-pro-react": "^2.6.1",
-    "@microsoft/signalr": "^7.0.12",
+    "@tanstack/react-table": "^8.10.7",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.288.0",
     "next": "13.5.6",
+    "pocketbase": "^0.19.0",
     "qrcode.react": "^3.1.0",
     "react": "^18",
     "react-dom": "^18",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
