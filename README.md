@@ -4,7 +4,7 @@ The application is a fake bank account management system. It allows to create an
 
 ## Purpose
 
-The purpose of the application is to learn Next.js 13.4 and use the tiny, one file, open-source Backend-as-a-Service (BaaS) called [PocketBase](https://pocketbase.io/).
+The purpose of the application is to learn **Next.js 14** and use the tiny, one file, open-source Backend-as-a-Service (BaaS) called [PocketBase](https://pocketbase.io/).
 
 ## Demo
 
@@ -17,8 +17,8 @@ A demo is available at [https://pocket-bank.vercel.app](https://pocket-bank.verc
 ## Used technologies
 
 - 🎁 Repository: regular Git repository,
-- 🧰 Framework: Next.js 13.4,
-- 🛠️ Tools: not yet,
+- 🧰 Framework: Next.js 14,
+- 🛠️ Tools: tanstack table 8, react testing library, jest, pnpm,
 - 🎨 Styling: tailwind CSS,
 - 💎 Others: mobile-first, responsive design.
 
@@ -31,7 +31,7 @@ In this repository, PocketBase file (version for ARM architecture) and its confi
 To start the PocketBase server, run the defined following command:
 
 1. Run the PocketBase server: `pnpm run pocketbase`,
-2. Navigate to [http://127.0.0.1:8090/_](http://127.0.0.1:8090/_) to access the PocketBase dashboard.
+2. Navigate to [http://127.0.0.1:8090/\_](http://127.0.0.1:8090/_) to access the PocketBase dashboard.
 
 ## How to start
 

@@ -11,7 +11,7 @@ type Props = {};
 export default function DashboardPage(props: Props) {
   const router = useRouter();
   if (!pb.authStore.isValid) {
-    router.push('/login');
+    router.push("/login");
   }
 
   return (

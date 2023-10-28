@@ -10,7 +10,7 @@ type Props = {};
 export default function SendMoneyPage(props: Props) {
   const router = useRouter();
   if (!pb.authStore.isValid) {
-    router.push('/login');
+    router.push("/login");
   }
 
   return (
