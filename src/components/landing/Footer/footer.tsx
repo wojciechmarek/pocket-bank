@@ -1,7 +1,7 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link'
+import React from 'react'
 
-type Props = {};
+type Props = {}
 
 export const Footer = (props: Props) => {
   return (
@@ -69,5 +69,5 @@ export const Footer = (props: Props) => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}

@@ -1,12 +1,12 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { loggedIds } from "./common";
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { loggedIds } from './common'
 
 type RequestData = {
-  id: string;
-};
+  id: string
+}
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.body as RequestData;
-  loggedIds.push(id);
-  res.status(200).json({ id });
+  const { id } = req.body as RequestData
+  loggedIds.push(id)
+  res.status(200).json({ id })
 }

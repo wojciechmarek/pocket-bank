@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import React from "react";
-import { Navigation, SendMoney } from "@/components/app";
-import { useRouter } from "next/navigation";
-import { pb } from "@/pocketbase/pocketbase";
+import React from 'react'
+import { Navigation, SendMoney } from '@/components/app'
+import { useRouter } from 'next/navigation'
+import { pb } from '@/pocketbase/pocketbase'
 
-type Props = {};
+type Props = {}
 
 export default function SendMoneyPage(props: Props) {
-  const router = useRouter();
+  const router = useRouter()
   if (!pb.authStore.isValid) {
-    router.push("/login");
+    router.push('/login')
   }
 
   return (
@@ -20,5 +20,5 @@ export default function SendMoneyPage(props: Props) {
         <SendMoney />
       </main>
     </>
-  );
+  )
 }

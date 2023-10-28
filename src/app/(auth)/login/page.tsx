@@ -1,37 +1,36 @@
-"use client";
+'use client'
 
-import React from "react";
-import { QRCodeSVG } from "qrcode.react";
-import Image from "next/image";
-import { Eye, EyeOff } from "lucide-react";
-import { v4 as uuidv4 } from "uuid";
-import { useRouter } from "next/navigation";
-import { pb } from "@/pocketbase/pocketbase";
+import { Eye, EyeOff } from 'lucide-react'
+import Image from 'next/image'
+import { QRCodeSVG } from 'qrcode.react'
+import React from 'react'
+import { pb } from '@/pocketbase/pocketbase'
+import { useRouter } from 'next/navigation'
+import { v4 as uuidv4 } from 'uuid'
 
-type Props = {};
+type Props = {}
 
 export default function LoginPage(props: Props) {
-  const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = React.useState(false)
 
   const handleMakePasswordVisibleClick = () => {
-    setIsPasswordVisible(!isPasswordVisible);
-  };
+    setIsPasswordVisible(!isPasswordVisible)
+  }
 
-  const uuid = uuidv4();
+  const uuid = uuidv4()
 
-  const router = useRouter();
+  const router = useRouter()
 
   const handleOnLoginButtonClick = async () => {
-    await pb.collection("users").authWithPassword("wojmar", "Qwertyuiop1!");
+    await pb.collection('users').authWithPassword('wojmar', 'Qwertyuiop1!')
 
-    console.log("----------");
+    // console.log("----------");
+    // console.log(pb.authStore.isValid);
+    // console.log(pb.authStore.token);
+    // console.log(pb.authStore.model?.id);
 
-    console.log(pb.authStore.isValid);
-    console.log(pb.authStore.token);
-    console.log(pb.authStore.model?.id);
-
-    router.push("/dashboard");
-  };
+    router.push('/dashboard')
+  }
 
   return (
     <main className="px-8 md:px-4">
@@ -41,7 +40,7 @@ export default function LoginPage(props: Props) {
             src="/cards.png"
             alt=""
             fill={true}
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: 'cover' }}
             className="rounded-lg"
           />
         </div>
@@ -64,7 +63,7 @@ export default function LoginPage(props: Props) {
                   <label htmlFor="password">Password</label>
                   <div className="flex flex-row justify-between items-center relative">
                     <input
-                      type={isPasswordVisible ? "text" : "password"}
+                      type={isPasswordVisible ? 'text' : 'password'}
                       id="password"
                       className="bg-[#1d1d1d] rounded-lg px-4 py-2 disabled:opacity-50 w-full"
                       value="Demo123!"
@@ -72,7 +71,7 @@ export default function LoginPage(props: Props) {
                     />
                     <button
                       className="absolute right-4"
-                      style={{ top: "50%", transform: "translateY(-50%)" }}
+                      style={{ top: '50%', transform: 'translateY(-50%)' }}
                       onClick={handleMakePasswordVisibleClick}
                       type="button"
                     >
@@ -109,5 +108,5 @@ export default function LoginPage(props: Props) {
         </div>
       </div>
     </main>
-  );
+  )
 }

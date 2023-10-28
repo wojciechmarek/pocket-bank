@@ -1,10 +1,10 @@
-"use client";
+'use client'
 
-import React from "react";
-import { FeatureItem } from "./feature-item";
-import { motion } from "framer-motion";
+import React from 'react'
+import { FeatureItem } from './feature-item'
+import { motion } from 'framer-motion'
 
-type Props = {};
+type Props = {}
 
 export const Features = (props: Props) => {
   return (
@@ -52,5 +52,5 @@ export const Features = (props: Props) => {
         />
       </motion.div>
     </div>
-  );
-};
+  )
+}

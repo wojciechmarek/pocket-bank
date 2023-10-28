@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   Info,
@@ -7,48 +7,48 @@ import {
   Send,
   SendHorizonal,
   SendHorizontal,
-} from "lucide-react";
-import React from "react";
-import { TransactionsTable } from "../History/TransactionsTable";
+} from 'lucide-react'
+import React from 'react'
+import { TransactionsTable } from '../History/TransactionsTable'
 
 const accounts = [
   {
-    amount: "234,02",
-    code: "EUR",
-    name: "Euro 🇪🇺",
+    amount: '234,02',
+    code: 'EUR',
+    name: 'Euro 🇪🇺',
   },
   {
-    amount: "12 445,55",
-    code: "PLN",
-    name: "Polish zloty 🇵🇱",
+    amount: '12 445,55',
+    code: 'PLN',
+    name: 'Polish zloty 🇵🇱',
   },
   {
-    amount: "994,93",
-    code: "USD",
-    name: "US Dollar 🇺🇸",
+    amount: '994,93',
+    code: 'USD',
+    name: 'US Dollar 🇺🇸',
   },
-];
+]
 
 const defaultData = [
   {
-    type: "in",
-    date: "2021-01-01",
+    type: 'in',
+    date: '2021-01-01',
     amount: 20,
-    description: "test",
-    status: "Processing",
+    description: 'test',
+    status: 'Processing',
     amountAfter: 80,
   },
   {
-    type: "in",
-    date: "2021-01-02",
+    type: 'in',
+    date: '2021-01-02',
     amount: 20,
-    description: "test",
-    status: "Finished",
+    description: 'test',
+    status: 'Finished',
     amountAfter: 60,
   },
-];
+]
 
-type Props = {};
+type Props = {}
 
 export const Dashboard = (props: Props) => {
   return (
@@ -62,9 +62,9 @@ export const Dashboard = (props: Props) => {
               key={`account-${account.name}`}
             >
               <p className="text-2xl font-bold">
-                {account.amount.split(",").at(0)}
+                {account.amount.split(',').at(0)}
                 <span className="text-sm mr-2">
-                  ,{account.amount.split(",").at(1)}
+                  ,{account.amount.split(',').at(1)}
                 </span>
                 {account.code}
               </p>
@@ -101,5 +101,5 @@ export const Dashboard = (props: Props) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}

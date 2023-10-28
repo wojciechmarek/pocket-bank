@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import React, { useEffect } from "react";
-import PocketBase from "pocketbase";
-import { Investing, Navigation } from "@/components/app";
-import { useRouter } from "next/navigation";
-import { pb } from "@/pocketbase/pocketbase";
+import React, { useEffect } from 'react'
+import PocketBase from 'pocketbase'
+import { Investing, Navigation } from '@/components/app'
+import { useRouter } from 'next/navigation'
+import { pb } from '@/pocketbase/pocketbase'
 
-type Props = {};
+type Props = {}
 
 export default function InvestingPage(props: Props) {
-  const router = useRouter();
+  const router = useRouter()
   if (!pb.authStore.isValid) {
-    router.push("/login");
+    router.push('/login')
   }
 
   return (
@@ -21,5 +21,5 @@ export default function InvestingPage(props: Props) {
         <Investing />
       </main>
     </>
-  );
+  )
 }

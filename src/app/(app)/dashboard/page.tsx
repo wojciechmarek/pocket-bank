@@ -1,17 +1,16 @@
-"use client";
+'use client'
 
-import React from "react";
+import { Dashboard, Navigation } from '@/components/app'
+import React from 'react'
+import { pb } from '@/pocketbase/pocketbase'
+import { useRouter } from 'next/navigation'
 
-import { Dashboard, Navigation } from "@/components/app";
-import { useRouter } from "next/navigation";
-import { pb } from "@/pocketbase/pocketbase";
-
-type Props = {};
+type Props = {}
 
 export default function DashboardPage(props: Props) {
-  const router = useRouter();
+  const router = useRouter()
   if (!pb.authStore.isValid) {
-    router.push("/login");
+    router.push('/login')
   }
 
   return (
@@ -21,5 +20,5 @@ export default function DashboardPage(props: Props) {
         <Dashboard />
       </main>
     </>
-  );
+  )
 }

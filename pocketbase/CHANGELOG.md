@@ -8,9 +8,9 @@
   This could be used to minimize the downloaded json data when listing records with large `editor` html values.
 
   ```js
-  await pb.collection("example").getList(1, 20, {
-    fields: "*,description:excerpt(100)",
-  });
+  await pb.collection('example').getList(1, 20, {
+    fields: '*,description:excerpt(100)',
+  })
   ```
 
 - Several Admin UI improvements:
@@ -99,13 +99,13 @@
 
   ```js
   // HMAC with SHA256
-  $security.hs256("hello", "secret");
+  $security.hs256('hello', 'secret')
 
   // HMAC with SHA512
-  $security.hs512("hello", "secret");
+  $security.hs512('hello', 'secret')
 
   // compare 2 strings with a constant time
-  $security.equal(hash1, hash2);
+  $security.equal(hash1, hash2)
   ```
 
 ## v0.18.1
@@ -201,9 +201,9 @@
 - Added JSVM helper crypto primitives under the `$security.*` namespace:
 
   ```js
-  $security.md5(text);
-  $security.sha256(text);
-  $security.sha512(text);
+  $security.md5(text)
+  $security.sha256(text)
+  $security.sha512(text)
   ```
 
 - ⚠️ Deprecated `RelationOptions.DisplayFields` in favor of the new `SchemaField.Presentable` option to avoid the duplication when a single collection is referenced more than once and/or by multiple other collections.
@@ -519,10 +519,10 @@
   ```js
   // original: {"id": "RECORD_ID", "name": "abc", "description": "...something very big...", "items": ["id1", "id2"], "expand": {"items": [{"id": "id1", "name": "test1"}, {"id": "id2", "name": "test2"}]}}
   // output:   {"name": "abc", "expand": {"items": [{"name": "test1"}, {"name": "test2"}]}}
-  const result = await pb.collection("example").getOne("RECORD_ID", {
-    expand: "items",
-    fields: "name,expand.items.name",
-  });
+  const result = await pb.collection('example').getOne('RECORD_ID', {
+    expand: 'items',
+    fields: 'name,expand.items.name',
+  })
   ```
 
 - Added new `./pocketbase update` command to selfupdate the prebuilt executable (with option to generate a backup of your `pb_data`).
@@ -1222,19 +1222,19 @@
   migrate(
     (db) => {
       // up
-      const dao = new Dao(db);
-      const collection = dao.findCollectionByNameOrId("lngf8rb3dqu86r3");
-      collection.name = "posts_new";
-      return dao.saveCollection(collection);
+      const dao = new Dao(db)
+      const collection = dao.findCollectionByNameOrId('lngf8rb3dqu86r3')
+      collection.name = 'posts_new'
+      return dao.saveCollection(collection)
     },
     (db) => {
       // down
-      const dao = new Dao(db);
-      const collection = dao.findCollectionByNameOrId("lngf8rb3dqu86r3");
-      collection.name = "posts_old";
-      return dao.saveCollection(collection);
-    },
-  );
+      const dao = new Dao(db)
+      const collection = dao.findCollectionByNameOrId('lngf8rb3dqu86r3')
+      collection.name = 'posts_old'
+      return dao.saveCollection(collection)
+    }
+  )
   ```
 
 - Added new `Dao` helpers to make it easier fetching and updating the app settings from a migration:

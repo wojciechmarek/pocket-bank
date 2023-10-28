@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import Link from 'next/link'
+import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
 
-type Props = {};
+type Props = {}
 
 export const Hero = (props: Props) => {
   return (
@@ -47,10 +47,10 @@ export const Hero = (props: Props) => {
           src="/cards.png"
           alt=""
           fill={true}
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: 'cover' }}
           className="rounded-lg"
         />
       </div>
     </div>
-  );
-};
+  )
+}
