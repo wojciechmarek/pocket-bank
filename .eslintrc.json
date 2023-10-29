@@ -1,3 +1,30 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["jest"],
+  "extends": ["next/core-web-vitals", "plugin:sonarjs/recommended", "prettier"],
+  "rules": {
+    "semi": ["error", "always"],
+    "no-tabs": "error",
+    "quotes": ["error", "double"],
+    "no-console": "error",
+    "no-debugger": "error",
+    "no-alert": "error",
+    "no-unused-vars": "warn",
+    "no-undef": "warn",
+    "no-unreachable": "warn",
+    "no-irregular-whitespace": "warn",
+    "no-trailing-spaces": "warn",
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": false,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
+        "allowSeparatedGroups": false
+      }
+    ]
+  },
+  "env": {
+    "jest/globals": true
+  }
 }

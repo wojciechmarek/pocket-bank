@@ -1,31 +1,28 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { pb } from "@/pocketbase/pocketbase";
 import Image from "next/image";
-
-type Props = {};
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { pb } from "@/pocketbase/pocketbase";
+import { useRouter } from "next/navigation";
 
 type User = {
-  avatar: string,
-  collectionId: string,
-  collectionName: string,
-  created: string,
-  email: string,
-  emailVisibility: boolean,
-  id: string,
-  name: string,
-  updated: string,
-  username: string,
-  verified: boolean,
-}
+  avatar: string;
+  collectionId: string;
+  collectionName: string;
+  created: string;
+  email: string;
+  emailVisibility: boolean;
+  id: string;
+  name: string;
+  updated: string;
+  username: string;
+  verified: boolean;
+};
 
-
-export const Navigation = (props: Props) => {
+export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState<User>();
   const router = useRouter();
@@ -37,7 +34,7 @@ export const Navigation = (props: Props) => {
   const handleLogOutButtonClick = () => {
     pb.authStore.clear();
     router.push("/");
-  }
+  };
 
   // useEffect(() => {
   //   const updateScreen = () => {
@@ -52,17 +49,16 @@ export const Navigation = (props: Props) => {
 
   const getUserData = useCallback(async (id: number | string) => {
     try {
-      const result = await pb.collection("users").getFirstListItem(`id="${id}"`)
+      const result = await pb
+        .collection("users")
+        .getFirstListItem(`id="${id}"`);
       setUser(result as User);
     } catch (error) {
-      console.log(error);
+      // console.error(asd);
     }
-
   }, []);
 
   useEffect(() => {
-    console.log("dupa");
-
     const userId = pb.authStore.model?.id;
     if (userId) {
       getUserData(userId);
@@ -101,13 +97,16 @@ export const Navigation = (props: Props) => {
         <div className="flex items-center gap-8">
           <div className="flex items-center gap-4 w-fit">
             <div className="h-10 w-10 relative">
-              <Image src={`http://127.0.0.1:8090/api/files/_pb_users_auth_/${user?.id}/${user?.avatar}`} alt="" fill={true} className="rounded-full" />
+              <Image
+                src={`http://127.0.0.1:8090/api/files/_pb_users_auth_/${user?.id}/${user?.avatar}`}
+                alt=""
+                fill={true}
+                className="rounded-full"
+              />
             </div>
             <p>{user?.name}</p>
           </div>
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-          >
+          <motion.div whileHover={{ scale: 1.1 }}>
             <button
               className="px-6 py-2 rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7] font-bold"
               onClick={handleLogOutButtonClick}

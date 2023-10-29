@@ -1,4 +1,11 @@
-import { About, Features, Footer, Hero, Navigation, Plans } from "@/components/landing";
+import {
+  About,
+  Features,
+  Footer,
+  Hero,
+  Navigation,
+  Plans,
+} from "@/components/landing";
 
 export default function Home() {
   return (

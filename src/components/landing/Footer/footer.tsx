@@ -1,9 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-type Props = {};
-
-export const Footer = (props: Props) => {
+export const Footer = () => {
   return (
     <footer className="bg-[#0d0d0d] px-8 lg:px-0">
       <div className="flex items-center justify-between py-8 max-w-5xl mx-auto h-56">

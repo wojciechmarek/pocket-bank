@@ -1,13 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-type Props = {};
-
-export const Navigation = (props: Props) => {
+export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMobileMenuClick = () => {
@@ -19,7 +17,7 @@ export const Navigation = (props: Props) => {
       if (window.innerWidth > 768) {
         setIsMobileMenuOpen(false);
       }
-    }
+    };
     updateScreen();
     window.addEventListener("resize", updateScreen);
     return () => window.removeEventListener("resize", updateScreen);
@@ -56,9 +54,7 @@ export const Navigation = (props: Props) => {
             <Link href="/about">About</Link>
           </li>
           <li>
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-            >
+            <motion.div whileHover={{ scale: 1.1 }}>
               <Link
                 className="px-6 py-3 rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7] font-bold"
                 href="/dashboard"

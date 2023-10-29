@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { AboutItem } from "./about-item";
+import { useState } from "react";
 
-type Props = {};
-
-export const About = (props: Props) => {
+export const About = () => {
   const [expandedItem, setExpandedItem] = useState(0);
 
   const handleFaqItemExpandClick = (itemNo: number) => {

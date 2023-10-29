@@ -1,12 +1,10 @@
 "use client";
 
-import React from "react";
 import { FeatureItem } from "./feature-item";
+import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-export const Features = (props: Props) => {
+export const Features = () => {
   return (
     <div className="mt-56 lg:mt-36 w-full">
       <h2 className="text-4xl font-bold text-center">
@@ -20,9 +18,7 @@ export const Features = (props: Props) => {
       </h2>
 
       {/* FEATURE 1 */}
-      <motion.div
-
-      >
+      <motion.div>
         <FeatureItem
           title1="Great Dashboard"
           title2="with Light/Dark Mode."
@@ -33,8 +29,7 @@ export const Features = (props: Props) => {
       </motion.div>
 
       {/* FEATURE 2 */}
-      <motion.div
-      >
+      <motion.div>
         <FeatureItem
           title1="Unlimited Cards"
           title2="only in the Premium Plan."
@@ -45,8 +40,7 @@ export const Features = (props: Props) => {
       </motion.div>
 
       {/* FEATURE 3 */}
-      <motion.div
-      >
+      <motion.div>
         <FeatureItem
           title1="IRS Tax Calculator"
           title2="to pay less taxes."

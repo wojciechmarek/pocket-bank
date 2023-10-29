@@ -1,13 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-export const Hero = (props: Props) => {
+export const Hero = () => {
   return (
     <div className="flex gap-3 w-full mt-36 items-center">
       <div className="flex flex-col w-full lg:w-1/2 md:pr-5">
@@ -21,12 +19,11 @@ export const Hero = (props: Props) => {
           </span>
         </h1>
         <p className="mt-6 text-center lg:text-left">
-          The only banking app you will ever need, with a simple and intuitive UI and a wide range of features.
+          The only banking app you will ever need, with a simple and intuitive
+          UI and a wide range of features.
         </p>
         <div className="flex gap-4 mt-12 lg:mt-6 justify-center lg:justify-start items-center">
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-          >
+          <motion.div whileHover={{ scale: 1.1 }}>
             <Link
               className="px-7 py-4 font-bold rounded-full bg-gradient-to-bl from-[#B24A6D] to-[#564ED7]"
               href="/login"
@@ -44,7 +41,13 @@ export const Hero = (props: Props) => {
         </div>
       </div>
       <div className="h-96 hidden lg:block w-full lg:w-1/2 relative">
-        <Image src="/cards.png" alt="" fill={true} style={{ objectFit: "cover" }} className="rounded-lg" />
+        <Image
+          src="/cards.png"
+          alt=""
+          fill={true}
+          style={{ objectFit: "cover" }}
+          className="rounded-lg"
+        />
       </div>
     </div>
   );
