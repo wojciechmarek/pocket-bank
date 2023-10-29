@@ -6,10 +6,10 @@ import { pb } from "@/pocketbase/pocketbase";
 import { useRouter } from "next/navigation";
 
 export default function DashboardPage() {
-  const router = useRouter();
-  if (!pb.authStore.isValid) {
-    router.push("/login");
-  }
+  // const router = useRouter();
+  // if (!pb.authStore.isValid) {
+  //   router.push("/login");
+  // }
 
   return (
     <>

@@ -7,8 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Pocket Bank",
-  description: "All you need in your pocket.",
-  themeColor: "#000000",
+  description: "All you need in your pocket."
 };
 
 export default function RootLayout({
