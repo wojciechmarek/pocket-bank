@@ -1,17 +1,7 @@
 "use client";
 
-import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from "@tanstack/react-table";
-import { MoreVertical } from "lucide-react";
-import { Navigation } from "../common/Navigation";
 import React from "react";
 import { TransactionsTable } from "./TransactionsTable";
-
-type Props = {};
 
 const defaultData = [
   {
@@ -32,7 +22,7 @@ const defaultData = [
   },
 ];
 
-export const History = (props: Props) => {
+export const History = () => {
   const [data, setData] = React.useState(() => [...defaultData]);
 
   const handleAddNewRowButtonClick = () => {
@@ -49,8 +39,9 @@ export const History = (props: Props) => {
     ]);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const handleTransactionDetailsButtonClick = (id: string) => {
-    alert(id);
+   //asdasd
   };
 
   return (

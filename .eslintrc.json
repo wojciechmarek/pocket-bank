@@ -1,11 +1,6 @@
 {
-  "plugins": ["@typescript-eslint"],
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:sonarjs/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
+  "plugins": ["jest"],
+  "extends": ["next/core-web-vitals", "plugin:sonarjs/recommended", "prettier"],
   "rules": {
     "semi": ["error", "always"],
     "no-tabs": "error",
@@ -28,5 +23,8 @@
         "allowSeparatedGroups": false
       }
     ]
+  },
+  "env": {
+    "jest/globals": true
   }
 }

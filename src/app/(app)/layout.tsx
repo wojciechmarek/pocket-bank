@@ -1,9 +1,7 @@
 "use client";
 
-import { Navigation } from "@/components/app";
-import { pb } from "@/pocketbase/pocketbase";
-import { useRouter } from "next/navigation";
+import { ReactNode } from "react";
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout({ children }: { children: ReactNode }) {
   return <div>{children}</div>;
 }

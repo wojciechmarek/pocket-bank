@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { loggedIds, removedLoggedIds } from "./common";
+import { loggedIds } from "./common";
 
 type RequestData = {
   id: string;

@@ -1,14 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
-import PocketBase from "pocketbase";
 import { Investing, Navigation } from "@/components/app";
-import { useRouter } from "next/navigation";
+import React from "react";
 import { pb } from "@/pocketbase/pocketbase";
+import { useRouter } from "next/navigation";
 
-type Props = {};
-
-export default function InvestingPage(props: Props) {
+export default function InvestingPage() {
   const router = useRouter();
   if (!pb.authStore.isValid) {
     router.push("/login");

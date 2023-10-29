@@ -1,13 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-export const Hero = (props: Props) => {
+export const Hero = () => {
   return (
     <div className="flex gap-3 w-full mt-36 items-center">
       <div className="flex flex-col w-full lg:w-1/2 md:pr-5">

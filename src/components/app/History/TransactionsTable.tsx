@@ -12,6 +12,7 @@ import { MoreVertical } from "lucide-react";
 
 type Props = {
   transactions: Transaction[];
+  // eslint-disable-next-line no-unused-vars
   onTransactionClick: (id: string) => void;
 };
 

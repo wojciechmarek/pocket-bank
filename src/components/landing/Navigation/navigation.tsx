@@ -1,13 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-type Props = {};
-
-export const Navigation = (props: Props) => {
+export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMobileMenuClick = () => {

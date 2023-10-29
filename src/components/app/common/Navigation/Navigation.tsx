@@ -8,8 +8,6 @@ import { motion } from "framer-motion";
 import { pb } from "@/pocketbase/pocketbase";
 import { useRouter } from "next/navigation";
 
-type Props = {};
-
 type User = {
   avatar: string;
   collectionId: string;
@@ -24,7 +22,7 @@ type User = {
   verified: boolean;
 };
 
-export const Navigation = (props: Props) => {
+export const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState<User>();
   const router = useRouter();
@@ -56,7 +54,7 @@ export const Navigation = (props: Props) => {
         .getFirstListItem(`id="${id}"`);
       setUser(result as User);
     } catch (error) {
-      console.error(asd);
+      // console.error(asd);
     }
   }, []);
 

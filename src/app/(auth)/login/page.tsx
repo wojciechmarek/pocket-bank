@@ -8,9 +8,7 @@ import { pb } from "@/pocketbase/pocketbase";
 import { useRouter } from "next/navigation";
 import { v4 as uuidv4 } from "uuid";
 
-type Props = {};
-
-export default function LoginPage(props: Props) {
+export default function LoginPage() {
   const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
 
   const handleMakePasswordVisibleClick = () => {

@@ -1,19 +1,16 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import { useSearchParams } from "next/navigation";
 import { io } from "socket.io-client";
+// import { useSearchParams } from "next/navigation";
 
-type Props = {};
+export default function RemoteLoginPage() {
+  // const searchParams = useSearchParams();
 
-export default function RemoteLoginPage(props: Props) {
-  const searchParams = useSearchParams();
-  const id = searchParams?.get("id");
-
-  const [isFingerprintAvailable, setIsFingerprintAvailable] =
+  const [isFingerprintAvailable] =
     React.useState(false);
-  const [isLoggingIn, setIsLoggingIn] = React.useState(false);
-  const [isLogged, setIsLogged] = React.useState(false);
+  const [isLoggingIn] = React.useState(false);
+  const [isLogged] = React.useState(false);
 
   useEffect(() => socketInitializer(), []);
 

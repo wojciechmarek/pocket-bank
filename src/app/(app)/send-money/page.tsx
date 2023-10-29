@@ -1,13 +1,11 @@
 "use client";
 
-import React from "react";
 import { Navigation, SendMoney } from "@/components/app";
-import { useRouter } from "next/navigation";
+import React from "react";
 import { pb } from "@/pocketbase/pocketbase";
+import { useRouter } from "next/navigation";
 
-type Props = {};
-
-export default function SendMoneyPage(props: Props) {
+export default function SendMoneyPage() {
   const router = useRouter();
   if (!pb.authStore.isValid) {
     router.push("/login");

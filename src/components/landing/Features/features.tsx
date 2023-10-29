@@ -1,12 +1,10 @@
 "use client";
 
-import React from "react";
 import { FeatureItem } from "./feature-item";
+import React from "react";
 import { motion } from "framer-motion";
 
-type Props = {};
-
-export const Features = (props: Props) => {
+export const Features = () => {
   return (
     <div className="mt-56 lg:mt-36 w-full">
       <h2 className="text-4xl font-bold text-center">

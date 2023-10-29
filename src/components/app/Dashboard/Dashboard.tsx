@@ -1,11 +1,8 @@
 "use client";
 
 import {
-  Info,
   MoreVertical,
   Plus,
-  Send,
-  SendHorizonal,
   SendHorizontal,
 } from "lucide-react";
 import React from "react";
@@ -48,15 +45,13 @@ const defaultData = [
   },
 ];
 
-type Props = {};
-
-export const Dashboard = (props: Props) => {
+export const Dashboard = () => {
   return (
     <div className="min-h-screen max-w-5xl lg:mx-auto mb-8">
       <div className="mt-8">
         <p className="text-xl font-bold">Accounts</p>
         <div className="flex gap-4 mt-4">
-          {accounts.map((account, index) => (
+          {accounts.map((account) => (
             <div
               className="bg-[#1d1d1d] rounded-md p-4 w-72"
               key={`account-${account.name}`}
@@ -97,7 +92,7 @@ export const Dashboard = (props: Props) => {
         <p className="text-xl font-bold mb-4">Latest transactions</p>
         <TransactionsTable
           transactions={defaultData}
-          onTransactionClick={(id) => alert(id)}
+          onTransactionClick={() => {}}
         />
       </div>
     </div>

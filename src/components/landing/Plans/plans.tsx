@@ -1,8 +1,6 @@
 import { PlanItem } from "./plan-item";
 import React from "react";
 
-type Props = {};
-
 const plans = [
   "Unlimited Cards",
   "Unlimited Transactions",
@@ -10,7 +8,7 @@ const plans = [
   "Unlimited Virtual Cards",
 ];
 
-export const Plans = (props: Props) => {
+export const Plans = () => {
   return (
     <div className="mt-36 w-full">
       <h2 className="text-4xl font-bold text-center">
